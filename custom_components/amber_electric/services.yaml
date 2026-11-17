@@ -1,0 +1,51 @@
+get_prices:
+  name: Get Prices
+  description: Fetch historical or forecast interval prices between two dates (up to 7 days) from the Amber Electric API.
+  fields:
+    site_id:
+      name: Site ID
+      description: Optional Amber Site ID (defaults to your first configured site).
+      example: "01J23BAP2SFA218BMV8A73Y9Z9"
+      selector:
+        text:
+    start_date:
+      name: Start Date
+      description: Start date (YYYY-MM-DD). Defaults to today.
+      selector:
+        date:
+    end_date:
+      name: End Date
+      description: End date (YYYY-MM-DD). Defaults to today. Must be within 7 days of start_date.
+      selector:
+        date:
+    resolution:
+      name: Resolution
+      description: Interval duration in minutes (5 or 30).
+      selector:
+        select:
+          options:
+            - "5"
+            - "30"
+
+get_usage:
+  name: Get Usage
+  description: Fetch interval electricity usage and cost between two dates (up to 7 days, within the last 90 days).
+  fields:
+    site_id:
+      name: Site ID
+      description: Optional Amber Site ID (defaults to your first configured site).
+      example: "01J23BAP2SFA218BMV8A73Y9Z9"
+      selector:
+        text:
+    start_date:
+      name: Start Date
+      description: Start date (YYYY-MM-DD).
+      required: true
+      selector:
+        date:
+    end_date:
+      name: End Date
+      description: End date (YYYY-MM-DD). Must be within 7 days of start_date.
+      required: true
+      selector:
+        date:
