@@ -1,0 +1,42 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Amber Electric",
+        "description": "Enter your Amber Electric API token generated from https://app.amber.com.au/developers",
+        "data": {
+          "api_key": "API Key",
+          "state": "NEM State (for state-wide grid renewables)"
+        }
+      },
+      "site": {
+        "title": "Select Amber Electric Site",
+        "description": "Multiple sites were found on your account. Select the site to configure.",
+        "data": {
+          "site_id": "Site (NMI)",
+          "state": "NEM State (for state-wide grid renewables)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the Amber Electric API. Please try again.",
+      "invalid_auth": "Invalid API key. Generate a valid token at app.amber.com.au/developers.",
+      "no_sites": "No active or pending electricity sites were found on this account.",
+      "unknown": "Unexpected error occurred."
+    },
+    "abort": {
+      "already_configured": "This Amber Electric site is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Amber Electric Options",
+        "data": {
+          "scan_interval": "Polling interval (seconds)",
+          "state": "NEM State (for state-wide grid renewables)"
+        }
+      }
+    }
+  }
+}
